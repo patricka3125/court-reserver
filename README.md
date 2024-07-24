@@ -12,7 +12,12 @@
     source ./.venv/bin/activate
     ```
 3. Login to your account and pull up developer tools. <br>
-https://github.com/user-attachments/assets/309964a1-5350-4484-92db-8953df2aa37b
+
+
+
+https://github.com/user-attachments/assets/fd61e623-ac43-4cb9-94a0-4f196b48eaa0
+
+
    
 4. Sample script run
    ```bash
