@@ -43,7 +43,6 @@ def send_reserve_request():
 
     if "Reservation Completed" in response.text:
         print("Reservation Completed")
-        return 0
     elif "you don't have permission to reserve" in response.text:
         print("invalid cookie")
     elif "not allowed to reserve Court so far ahead" in response.text:
@@ -52,13 +51,10 @@ def send_reserve_request():
         print("failed: no available courts")
     else:
         print(response.text)
-        return 1 
 
 def loop_reserve(x):
     for i in range(x):
-        status_code = send_reserve_request()
-        if status_code == 0:
-            return
+        send_reserve_request()
 
 def start_pool():
     print("start pool at ", dt.datetime.now())
