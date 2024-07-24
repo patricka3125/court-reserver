@@ -14,8 +14,7 @@
 3. Login to your account and pull up developer tools. <br>
 
 
-https://github.com/user-attachments/assets/141808b2-df84-4c84-b585-f3c7dff9e60e
-
+https://github.com/user-attachments/assets/16fe5a38-73b1-4006-bef8-ec4d9838310f
 
 
 4. Sample script run
