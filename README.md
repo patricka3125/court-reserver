@@ -1,12 +1,13 @@
 # court-reserver
 
 ## How to book courts:
-1. Install python
+1. Install Python <br>
    Refer to this guide on Mac OS. <br>
    https://docs.python-guide.org/starting/install3/osx/
 2. Create python virtual environment and install script dependencies. <br> 
    In the project folder.
     ```bash
+    cd /path/to/court-reserver
     python3 -m venv ./my-venv
     source ./my-venv/bin/activate
     ```
