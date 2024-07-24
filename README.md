@@ -1,12 +1,15 @@
 # court-reserver
 
-precondition for the script to work:
-* Need a login session cookie granted by PHP
-* need a cloudflare token that is stored in cookie
+Conditions for the script to work:
+* Need a login session cookie granted by PHP. Two options:
+  a. Manually login to an account on the browser before the session cookie expiration.
+  b. Simulate browser behavior with login keystrokes
+* Need a cloudflare token that is stored in cookie. It should be provided once account login is successful.
 
 ## Payload Information
 
-when I hit 8PM
+A HTTP POST request will be sent out once the user selects a time to reserve the court. 
+
 POST request header
 General --
 
