@@ -38,10 +38,12 @@ def send_reserve_request():
         'sec-ch-ua-platform': '"macOS"'
     }
 
-    response = requests.request("POST", url, headers=headers, data=payload)
+    response = requests.request("POST", url, headers=headers, data=payload, verify=False)
+    
 
     if "Reservation Completed" in response.text:
         print("Reservation Completed")
+        return 0
     elif "you don't have permission to reserve" in response.text:
         print("invalid cookie")
     elif "not allowed to reserve Court so far ahead" in response.text:
@@ -50,12 +52,13 @@ def send_reserve_request():
         print("failed: no available courts")
     else:
         print(response.text)
-
+        return 1 
 
 def loop_reserve(x):
     for i in range(x):
-        send_reserve_request()
-
+        status_code = send_reserve_request()
+        if status_code == 0:
+            return
 
 def start_pool():
     print("start pool at ", dt.datetime.now())
