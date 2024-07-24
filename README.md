@@ -14,11 +14,10 @@
 3. Login to your account and pull up developer tools. <br>
 
 
+https://github.com/user-attachments/assets/141808b2-df84-4c84-b585-f3c7dff9e60e
 
-https://github.com/user-attachments/assets/fd61e623-ac43-4cb9-94a0-4f196b48eaa0
 
 
-   
 4. Sample script run
    ```bash
    USER_ID=147865 COOKIE="PHPSESSID=i9qifv7psiad0u2vr0t2rebk7m; __cf_bm=RFh4YLooElKqYA5H8AQ56HD9QuHTds2Bqpi1.lvKjmo-1721842539-1.0.1.1-Mb.X3Ol7f11SX9IeWaJQhEbeQiZu6L9n50sfeF0LTwRfiSxcY1z6C08tzAJLKWFd27Utn_bPkVZK8EphkOFv9Q; isLoggedIn=1; SessionExpirationTime=1721871388" \ 
