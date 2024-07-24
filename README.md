@@ -1,10 +1,22 @@
 # court-reserver
 
-Conditions for the script to work:
-* Need a login session cookie granted by PHP. Two options:
-  a. Manually login to an account on the browser before the session cookie expiration.
-  b. Simulate browser behavior with login keystrokes
-* Need a cloudflare token that is stored in cookie. It should be provided once account login is successful.
+## How to book courts:
+1. Install python
+   Refer to this guide on Mac OS. <br>
+   https://docs.python-guide.org/starting/install3/osx/
+2. Create python virtual environment and install script dependencies. <br> 
+   In the project folder.
+    ```bash
+    python3 -m venv ./my-venv
+    source ./my-venv/bin/activate
+    ```
+3. Login to your account and pull up developer tools. <br>
+   Insert video here
+4. Sample script run
+   ```bash
+   USER_ID=147865 COOKIE="PHPSESSID=i9qifv7psiad0u2vr0t2rebk7m; __cf_bm=RFh4YLooElKqYA5H8AQ56HD9QuHTds2Bqpi1.lvKjmo-1721842539-1.0.1.1-Mb.X3Ol7f11SX9IeWaJQhEbeQiZu6L9n50sfeF0LTwRfiSxcY1z6C08tzAJLKWFd27Utn_bPkVZK8EphkOFv9Q; isLoggedIn=1; SessionExpirationTime=1721871388" \ 
+   python3 main.py
+   ```
 
 ## Payload Information
 
