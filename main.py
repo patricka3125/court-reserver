@@ -38,7 +38,8 @@ def send_reserve_request():
         'sec-ch-ua-platform': '"macOS"'
     }
 
-    response = requests.request("POST", url, headers=headers, data=payload)
+    response = requests.request("POST", url, headers=headers, data=payload, verify=False)
+    
 
     if "Reservation Completed" in response.text:
         print("Reservation Completed")
@@ -51,11 +52,9 @@ def send_reserve_request():
     else:
         print(response.text)
 
-
 def loop_reserve(x):
     for i in range(x):
         send_reserve_request()
-
 
 def start_pool():
     print("start pool at ", dt.datetime.now())
