@@ -12,7 +12,8 @@
     source ./.venv/bin/activate
     ```
 3. Login to your account and pull up developer tools. <br>
-   ![](assets/cookie_userid.m4v)
+
+   https://raw.githubusercontent.com/patricka3125/court-reserver/pl_readme/assets/cookie_userid.m4v
 4. Sample script run
    ```bash
    USER_ID=147865 COOKIE="PHPSESSID=i9qifv7psiad0u2vr0t2rebk7m; __cf_bm=RFh4YLooElKqYA5H8AQ56HD9QuHTds2Bqpi1.lvKjmo-1721842539-1.0.1.1-Mb.X3Ol7f11SX9IeWaJQhEbeQiZu6L9n50sfeF0LTwRfiSxcY1z6C08tzAJLKWFd27Utn_bPkVZK8EphkOFv9Q; isLoggedIn=1; SessionExpirationTime=1721871388" \ 
