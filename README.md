@@ -8,8 +8,8 @@
    In the project folder.
     ```bash
     cd /path/to/court-reserver
-    python3 -m venv ./my-venv
-    source ./my-venv/bin/activate
+    python3 -m venv ./.venv
+    source ./.venv/bin/activate
     ```
 3. Login to your account and pull up developer tools. <br>
    Insert video here
