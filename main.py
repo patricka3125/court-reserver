@@ -39,22 +39,24 @@ def send_reserve_request():
     }
 
     response = requests.request("POST", url, headers=headers, data=payload, verify=False)
-    
 
     if "Reservation Completed" in response.text:
-        print("Reservation Completed")
+        print("reservation complete")
     elif "you don't have permission to reserve" in response.text:
         print("invalid cookie")
     elif "not allowed to reserve Court so far ahead" in response.text:
         print("failed: too early")
-    elif "Unable to find any available Court" in response.text:
+    elif ("Unable to find any available Court" in response.text or
+          "reservation at this time is no longer available" in response.text):
         print("failed: no available courts")
     else:
         print(response.text)
 
+
 def loop_reserve(x):
     for i in range(x):
         send_reserve_request()
+
 
 def start_pool():
     print("start pool at ", dt.datetime.now())
@@ -64,7 +66,7 @@ def start_pool():
 
 def main():
     schedule = Scheduler()
-    schedule.once(dt.datetime.now().replace(hour=23, minute=59, second=0), start_pool)
+    schedule.once(dt.datetime.now().replace(hour=23, minute=59, second=45), start_pool)
     print(schedule)
     while True:
         schedule.exec_jobs()
