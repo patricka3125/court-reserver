@@ -63,14 +63,14 @@ def start_pool():
     pool = mp.Pool(mp.cpu_count())
     pool.map(loop_reserve, range(0, 100))
 
-
 def main():
     schedule = Scheduler()
     schedule.once(dt.datetime.now().replace(hour=23, minute=59, second=45), start_pool)
-    print(schedule)
     while True:
         schedule.exec_jobs()
+        print(schedule)
         time.sleep(1)
+        os.system("clear")
 
 
 if __name__ == "__main__":
