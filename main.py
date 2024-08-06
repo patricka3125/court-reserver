@@ -71,7 +71,7 @@ def login(session: requests.Session, login_token: str) -> None:
 
 def send_reserve_request(session: requests.Session, user_id: int) -> None:
     url = "https://lt.clubautomation.com/event/reserve-court-new-do?ajax=true"
-    payload = ("user_id={0}&component=42&club=4&court=-1&host={0}&date={1}%2F{2}%2F{3}&interval=30&"
+    payload = ("user_id={0}&component=42&club=4&court=-1&host={0}&date={1}%2F{2}%2F{3}&interval=120&"
                "time-reserve={4}&location-reserve=27&is_confirmed=1"
                .format(user_id, target_datetime.month, target_datetime.day,
                        target_datetime.year, int(target_datetime.timestamp())))
