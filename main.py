@@ -51,8 +51,6 @@ def get_login_token() -> (Optional[str], requests.Session):
 
 def login(session: requests.Session, login_token: str) -> None:
     url = "https://lt.clubautomation.com/login/login"
-    print(username)
-    print(password)
     payload = "email={0}&password={1}&login_token={2}".format(username, password, login_token)
     headers = {
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
