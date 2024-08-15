@@ -9,7 +9,7 @@ import requests
 from bs4 import BeautifulSoup
 from scheduler import Scheduler
 
-username = os.environ["USERNAME"]
+username = os.environ["USER"]
 password = os.environ["PASSWORD"]
 target_datetime = datetime.datetime.now() + datetime.timedelta(days=9)
 weekday_to_time_map = {
@@ -32,7 +32,7 @@ target_datetime = target_datetime.replace(
 def get_user_id(session: requests.Session) -> Optional[int]:
     url = "https://lt.clubautomation.com/user/get-member-info"
 
-    response = session.get(url)
+    response = session.get(url, verify=False)
     response.raise_for_status()
 
     return response.json()["info"]["id"]
@@ -41,7 +41,7 @@ def get_user_id(session: requests.Session) -> Optional[int]:
 def get_login_token() -> (Optional[str], requests.Session):
     url = "https://lt.clubautomation.com/"
     s = requests.Session()
-    response = s.get(url)
+    response = s.get(url, verify=False)
     response.raise_for_status()
 
     parsed_html = BeautifulSoup(response.text, features="html.parser")
@@ -57,7 +57,7 @@ def login(session: requests.Session, login_token: str) -> None:
         'X-Requested-With': 'XMLHttpRequest',
     }
 
-    response = session.post(url, headers=headers, data=payload)
+    response = session.post(url, headers=headers, data=payload, verify=False)
     response.raise_for_status()
     try:
         js = response.json()
@@ -77,7 +77,7 @@ def send_reserve_request(session: requests.Session, user_id: int) -> None:
                        target_datetime.year, int(target_datetime.timestamp())))
     headers = {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}
 
-    response = session.post(url, headers=headers, data=payload)
+    response = session.post(url, headers=headers, data=payload, verify=False)
 
     if "Reservation Completed" in response.text:
         print("reservation complete")
