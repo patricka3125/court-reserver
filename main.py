@@ -27,8 +27,8 @@ target_dt = target_dt.replace(
     second=0,
     microsecond=0
 )
-# start_dt = dt.datetime.now().replace(hour=11, minute=59, second=50, microsecond=0)
-start_dt = dt.datetime.now()
+start_dt = dt.datetime.now().replace(hour=11, minute=59, second=50, microsecond=0)
+# start_dt = dt.datetime.now()
 
 
 def get_user_id(session: requests.Session) -> Optional[int]:
